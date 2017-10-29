@@ -9,10 +9,8 @@
 namespace AppBundle\Controller;
 
 
-use AppBundle\AppBundle;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/orders", name="ordersIndex")
@@ -22,7 +20,7 @@ class ListController extends Controller
     /**
      * @Route("/list", name="ordersList")
      */
-    public function FormAction(Request $request)
+    public function FormAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -36,7 +34,7 @@ class ListController extends Controller
     /**
      * @Route("/details/{id}", name="details")
      */
-    public function categoryAction(Request $request, $id)
+    public function categoryAction($id)
     {
         $order = $this->getDoctrine()->getRepository('AppBundle:Orders')->find($id);
 

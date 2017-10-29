@@ -21,7 +21,7 @@ class OrdersController extends Controller
     /**
      * @Route("/", name="orderForm")
      */
-    public function FormAction(Request $request)
+    public function FormAction()
     {
         $form = $this->createForm(OrdersType::class, null, [
             'action' => $this->generateUrl('saveOrder')
