@@ -1,0 +1,34 @@
+<ul>
+    <li>
+        Name: {{ order.clientName }}
+    </li>
+    <li>
+        Email: {{ order.clientEmail }}
+    </li>
+    <li>
+        Phone number: {{ order.clientPhone }}
+    </li>
+    <li>
+        City: {{ order.clientCity }}
+    </li>
+    <li>
+        Width: {{ order.width }} m
+    </li>
+    <li>
+        Height: {{ order.height }} m
+    </li>
+    <li>
+        Area: {{ (order.width * order.height)|round(1, 'common') }}
+    </li>
+    <li>
+        Fixation: {{ order.fixation }}
+    </li>
+    <li>
+        Location: {{ order.location }}
+    </li>
+    <li>
+        Purpose: {{ order.purpose }}
+    </li>
+</ul>
+
+<a href="{{ path('ordersList') }}">Back</a>
