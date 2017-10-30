@@ -95,9 +95,16 @@ hwi_oauth:
 
     # here you will add one (or more) configurations for resource owners
     # and other settings you want to adjust in this bundle, just checkout the list below!
+    connect:
+        account_connector: my.custom.user_provider
+
+    fosub:
+        username_iterations: 30
+        properties:
+            facebook:    facebook_id
 
     resource_owners:
-        any_name:
+        facebook:
             type:                facebook
             client_id:           1354781147981525
             client_secret:       e00dfce2957caeeedbf8f14bd9f2f534
@@ -106,3 +113,8 @@ hwi_oauth:
                 display: popup #dialog is optimized for popup window
                 auth_type: rerequest # Re-asking for Declined Permissions
                 csrf: true
+
+services:
+    my.custom.user_provider:
+        class:        AppBundle\Security\Core\User\MyFOSUBUserProvider
+        arguments: ['@fos_user.user_manager', { facebook: facebook_id }]

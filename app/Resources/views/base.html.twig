@@ -11,6 +11,27 @@
     {% block canonical_meta %}{% endblock %}
 </head>
 <body>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1354781147981525',
+            cookie     : true,
+            xfbml      : true,
+            version    : '{latest-api-version}'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1354781147981525';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <div class="container">
     {% block container %}
         {% block header %}
