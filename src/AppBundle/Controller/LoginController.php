@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class LoginController extends Controller
 {
     /**
-     * @Route("test")
+     * @Route("test", name="test")
      */
     public function testAction()
     {
