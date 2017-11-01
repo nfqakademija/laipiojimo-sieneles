@@ -15,6 +15,7 @@ parameters:
         - {title: "What is ONGR", org: ongr-io, repo: global-docs, path: WhatIsONGR.md}
         - {title: "Start with Demo app", org: ongr-io, repo: demo.ongr.io, path: README.md}
         - {title: "Contributing to ONGR", org: ongr-io, repo: global-docs, path: Contributing.md}
+    my_user_provider.class: AppBundle\Security\Core\User\FOSUBUserProvider
 
 services:
     my_user_provider:
