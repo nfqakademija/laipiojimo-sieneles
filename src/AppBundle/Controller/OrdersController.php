@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 class OrdersController extends Controller
 {
     /**
-     * @Route("/", name="orderForm")
+     * @Route("/orders", name="orderForm")
      */
     public function FormAction()
     {
