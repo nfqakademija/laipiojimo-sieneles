@@ -1,0 +1,41 @@
+<header id="header">
+    <div class="logo">
+        <span class="icon fa-diamond"></span>
+    </div>
+    <div class="content">
+        <div class="inner">
+            <h1>Laipiojimo sienelės</h1>
+            <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
+                for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#work">Work</a></li>
+            {#<li><a href="#about">About</a></li>#}
+            <li><a href="#contact">Contact</a></li>
+
+
+            <li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <a href="{{ path('facebook_logout') }}">
+                        <span class="icon">
+                            <i class="fa fa-facebook-official", style="color: #3b5998"></i>
+                        </span>
+                        <span>Logout</span>
+                    </a>
+                {% else %}
+                    <a href="{{ path('app_facebook_connect') }}" >
+                        <span class="icon">
+                            <i class="fa fa-facebook-official", style="color: #3b5998"></i>
+                        </span>
+                        <span>Login</span>
+                    </a>
+                {% endif %}
+            </li>
+            <!--<li><a href="#elements">Elements</a></li>-->
+        </ul>
+    </nav>
+</header>
+

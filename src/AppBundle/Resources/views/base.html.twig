@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{{ "Laipiojimo sienelės" }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico')}}">
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+    {% endblock %}
+
+    {% block canonical_meta %}{% endblock %}
+</head>
+<body>
+
+
+
+    <div id="wrapper">
+        {% block wrapper %}
+
+            {% block header %}
+                {% include "AppBundle:inc:header.html.twig" %}
+            {% endblock %}
+
+        <!-- Main -->
+            <div id="main">
+                <!-- Intro -->
+                <article id="intro">
+                    {{ include('AppBundle:Articles:about.html.twig') }}
+                </article>
+
+                <!-- Work -->
+                <article id="work">
+                    {{ include('AppBundle:Articles:gallery.html.twig') }}
+
+                </article>
+
+                {#<!-- About -->#}
+                {#<article id="about">#}
+                    {#{{ include('AppBundle:Articles:about.html.twig') }}#}
+                {#</article>#}
+
+                <!-- Contact -->
+                <article id="contact">
+                    {{ include('AppBundle:Articles:contact.html.twig') }}
+                </article>
+
+            </div>
+            {% block footer %}
+                {% include "AppBundle:inc:footer.html.twig" %}
+            {% endblock %}
+
+        {% endblock %}
+    </div>
+
+
+
+    {% block javascripts %}
+        <script src="{{ asset('js/script.js') }}"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/skel.min.js') }}"></script>
+        <script src="{{ asset('js/util.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+    {% endblock %}
+
+</body>
 </html>
