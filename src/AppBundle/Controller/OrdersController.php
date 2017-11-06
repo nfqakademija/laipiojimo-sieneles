@@ -26,7 +26,7 @@ class OrdersController extends Controller
         $form = $this->createForm(OrdersType::class, null, [
             'action' => $this->generateUrl('saveOrder')
         ]);
-        return $this->render('AppBundle:contents:index.html.twig', [
+        return $this->render('AppBundle:inc:form.html.twig', [
             'form' => $form->createView(),
         ]);
     }

@@ -18,7 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class ListController extends Controller
 {
     /**
-     * @Route("/list", name="ordersList")
+     * @Route("/list", name="orders_list")
      */
     public function FormAction()
     {
