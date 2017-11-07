@@ -37,6 +37,11 @@
             <!--<li><a href="#elements">Elements</a></li>-->
         </ul>
     </nav>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <div>
+            <h1>Hello, {{ app.user.name }}</h1>
+        </div>
+    {% endif %}
     <span class="image main"><img src="{{ asset('images/pic02.jpg') }}" alt="" /></span>
 
 </header>
