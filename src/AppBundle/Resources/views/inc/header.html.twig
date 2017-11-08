@@ -40,7 +40,7 @@
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         <div>
             <h1>Hello, {{ app.user.name }}</h1>
-            <img src="{{ app.user.facebookPicture }}">
+            <img src="{{ asset('uploads/fb/' ~ app.user.facebookPicture) }}">
         </div>
     {% endif %}
     <span class="image main"><img src="{{ asset('images/pic02.jpg') }}" alt="" /></span>

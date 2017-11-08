@@ -39,7 +39,18 @@ class LoginEventListener
 
         $user = $this->em->getRepository(User::class)
             ->findOneBy(['facebookId' => $facebookUser->getId()]);
-        $user->setFacebookPicture($facebookUser->getPictureUrl());
-        $this->em->flush();
+
+        if (null == $user->getFacebookPicture()) {
+            $saveto = __DIR__.'/../../../web/uploads/fb';
+            $ch = curl_init($facebookUser->getPictureUrl());
+            $fp = fopen(sprintf('%s/%s.%s', $saveto, $facebookUser->getId(), 'jpg'),'wb');
+            curl_setopt($ch, CURLOPT_FILE, $fp);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_exec($ch);
+            curl_close($ch);
+            fclose($fp);
+            $user->setFacebookPicture($facebookUser->getId() . '.jpg');
+            $this->em->flush();
+        }
     }
 }
