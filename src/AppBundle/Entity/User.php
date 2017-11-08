@@ -47,6 +47,16 @@ class User implements UserInterface
      */
     private $facebookId;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $facebookPicture;
+
+    /**
+     * @ORM\Column(type="string",)
+     */
+    private $facebookToken;
+
     public function __construct()
     {
         $this->apiToken = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
@@ -136,6 +146,38 @@ class User implements UserInterface
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebookPicture()
+    {
+        return $this->facebookPicture;
+    }
+
+    /**
+     * @param mixed $facebookPicture
+     */
+    public function setFacebookPicture($facebookPicture)
+    {
+        $this->facebookPicture = $facebookPicture;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebookToken()
+    {
+        return $this->facebookToken;
+    }
+
+    /**
+     * @param mixed $facebookToken
+     */
+    public function setFacebookToken($facebookToken)
+    {
+        $this->facebookToken = $facebookToken;
     }
 
     /**

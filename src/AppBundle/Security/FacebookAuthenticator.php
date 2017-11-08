@@ -55,6 +55,7 @@ class FacebookAuthenticator extends SocialAuthenticator
         $user->setRoles(array('ROLE_USER'));
         $user->setName($facebookUserArray['name']);
         $user->setLastLoginTime(new \DateTime("now", new \DateTimeZone('Europe/Vilnius')));
+        $user->setFacebookToken($credentials);
         $this->em->persist($user);
         $this->em->flush();
 
