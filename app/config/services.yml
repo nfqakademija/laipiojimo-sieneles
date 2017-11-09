@@ -17,17 +17,19 @@ parameters:
         - {title: "Contributing to ONGR", org: ongr-io, repo: global-docs, path: Contributing.md}
 
 services:
-    app.token_authenticator:
-        class: AppBundle\Security\TokenAuthenticator
-        arguments: ["@doctrine.orm.entity_manager"]
-
-    app.facebook_authenticator:
-        class: AppBundle\Security\FacebookAuthenticator
-        autowire: true
-
-    AppBundle\EventListener\LoginEventListener:
-        class: AppBundle\EventListener\LoginEventListener
-        arguments: ['@doctrine.orm.default_entity_manager',
-         '@KnpU\OAuth2ClientBundle\Client\ClientRegistry']
-        tags:
-            - { name: kernel.event_listener, event: security.interactive_login, method: onLogin }
+#    _defaults:
+#        autowire: true
+#        autoconfigure: true
+#        public: false
+#
+#    AppBundle\Security\FacebookAuthenticator:
+#        # redundant thanks to _defaults, but value is overridable on each service
+#        autowire: true
+#        # not required, will help in our example
+#        public: true
+#
+#    AppBundle\:
+#        resource: '../../src/AppBundle/*'
+#        # you can exclude directories or files
+#        # but if a service is unused, it's removed anyway
+#        exclude: '../../src/AppBundle/{Entity,Repository,Form,Controller}'
