@@ -26,22 +26,22 @@ class OrdersType extends AbstractType
         $builder
             ->setMethod('POST')
             ->add('clientName', TextType::class, array(
-                'label' => 'Name',
+                'label' => 'Vardas',
             ))
             ->add('clientEmail', EmailType::class, array(
-                'label' => 'Email',
+                'label' => 'El. paštas',
             ))
             ->add('clientPhone', TextType::class, array(
-                'label' => 'Phone number',
+                'label' => 'Telefono numeris',
             ))
             ->add('clientCity', TextType::class, array(
-                'label' => 'City',
+                'label' => 'Miestas',
             ))
             ->add('width', NumberType::class, array(
-                'label' => 'Width (m)',
+                'label' => 'Plotis (m)',
             ))
             ->add('height', NumberType::class, array(
-                'label' => 'Height (m)',
+                'label' => 'Aukštis (m)',
             ))
             ->add('fixation', ChoiceType::class, array(
                 'label' => 'Fixation',

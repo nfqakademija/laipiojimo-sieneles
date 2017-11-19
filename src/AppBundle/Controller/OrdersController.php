@@ -26,10 +26,12 @@ class OrdersController extends Controller
         $form = $this->createForm(OrdersType::class, null, [
             'action' => $this->generateUrl('saveOrder')
         ]);
+
         return $this->render('AppBundle:inc:form.html.twig', [
             'form' => $form->createView(),
         ]);
     }
+
     /**
      * @Route("/saveOrder", name="saveOrder")
      * @Method("POST")
@@ -37,13 +39,17 @@ class OrdersController extends Controller
     public function SaveAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+
         $newOrder = new Orders();
         $newOrder->setSeen(false);
+
         $form = $this->createForm(OrdersType::class, $newOrder);
         $form->handleRequest($request);
+
         if ($form->isValid()) {
             $em->persist($newOrder);
             $em->flush();
+
             return $this->render('AppBundle:contents:output.html.twig', [
                 'output' => 'Your order has been sent!',
             ]);
@@ -52,5 +58,13 @@ class OrdersController extends Controller
                 'output' => 'Something went wrong. Go back and try again',
             ]);
         }
+    }
+
+    /**
+     * @Route("/newform", name="new-from")
+     */
+    public function newFormAction()
+    {
+        return $this->render('AppBundle:OrderForm:form.html.twig');
     }
 }
