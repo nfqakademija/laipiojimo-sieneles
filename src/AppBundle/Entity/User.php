@@ -33,11 +33,6 @@ class User implements UserInterface
     private $roles = array();
 
     /**
-     * @ORM\Column(type="string", unique=true)
-     */
-    private $apiToken;
-
-    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $lastLoginTime;
@@ -53,14 +48,9 @@ class User implements UserInterface
     private $facebookPicture;
 
     /**
-     * @ORM\Column(type="string",)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $facebookToken;
-
-    public function __construct()
-    {
-        $this->apiToken = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
-    }
 
     public function getId()
     {
@@ -113,14 +103,6 @@ class User implements UserInterface
     {
         // if you had a plainPassword property, you'd nullify it here
         // $this->plainPassword = null;
-    }
-
-    /**
-     * @param string $apiToken
-     */
-    public function setApiToken($apiToken)
-    {
-        $this->apiToken = $apiToken;
     }
 
     public function setLastLoginTime(\DateTime $lastLoginTime)

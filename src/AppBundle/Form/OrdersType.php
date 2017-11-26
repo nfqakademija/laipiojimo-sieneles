@@ -46,26 +46,26 @@ class OrdersType extends AbstractType
             ->add('fixation', ChoiceType::class, array(
                 'label' => 'Fixation',
                 'choices' => array(
-                    'Strong wall' => 'strong',
-                    'Weak wall' => 'weak',
-                    'Free standing' => 'free',
+                    'Strong wall' => 1,
+                    'Weak wall' => 2,
+                    'Free standing' => 3,
                 ),
             ))
             ->add('location', ChoiceType::class, array(
                 'label' => 'Location',
                 'choices' => array(
-                    'Indoor' => 'indoor',
-                    'Shelter' => 'shelter',
-                    'Outdoor' => 'outdoor',
+                    'Indoor' => 1,
+                    'Shelter' => 2,
+                    'Outdoor' => 3,
                 ),
             ))
             ->add('purpose', ChoiceType::class, array(
                 'label' => 'Purpose',
                 'choices' => array(
-                    'Profesional sport' => 'prosport',
-                    'Amateur sport' => 'asport',
-                    'Recreational' => 'recreational',
-                    'Playground' => 'playground',
+                    'Profesional sport' => 1,
+                    'Amateur sport' => 2,
+                    'Recreational' => 3,
+                    'Playground' => 4,
                 ),
             ))
             ->add('Submit', SubmitType::class)
