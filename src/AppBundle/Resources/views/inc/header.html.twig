@@ -10,10 +10,9 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#intro">{{ 'home.header_about'|trans }}</a></li>
-            <li><a href="#work">{{ 'home.header_gallery'|trans }}</a></li>
-            {#<li><a href="#about">About</a></li>#}
-            <li><a href="{{ path('new-from') }}">{{ 'home.header_order'|trans }}</a></li>
+            <li><a href="#intro">{{ 'header.about'|trans }}</a></li>
+            <li><a href="#work">{{ 'header.gallery'|trans }}</a></li>
+            <li><a href="{{ path('new-from') }}">{{ 'header.order'|trans }}</a></li>
 
 
             <li>
@@ -33,7 +32,6 @@
                     </a>
                 {% endif %}
             </li>
-            <!--<li><a href="#elements">Elements</a></li>-->
         </ul>
     </nav>
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

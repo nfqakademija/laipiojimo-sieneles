@@ -13,7 +13,7 @@ header.about: About
 header.gallery: Gallery
 header.order: Order
 home.header_login: Login
-home.header_login: Logout
+home.header_logout: Logout
 
 form.label_fixation: Fixation
 form.label_location: Location
@@ -35,3 +35,6 @@ form.choice_profesional: Professional sport
 form.choice_amateur: Amateur sport
 form.choice_recreational: Recreational
 form.choice_playground: Playground
+
+list.no: No
+list.area: Area

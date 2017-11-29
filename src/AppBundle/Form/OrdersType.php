@@ -56,8 +56,8 @@ class OrdersType extends AbstractType
                 'label' => 'form.label_location',
                 'choices' => array(
                     'form.choice_indoor' => 1,
-                    'form.choice_outdoor' => 2,
-                    'form.choice_shelter' => 3,
+                    'form.choice_shelter' => 2,
+                    'form.choice_outdoor' => 3,
                 ),
                 'expanded' => true,
             ))

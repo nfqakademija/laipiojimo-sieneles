@@ -8,17 +8,18 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class HomeController
+ *
  * @package AppBundle\Controller
+ *
  * @Route("/{_locale}", defaults={"_locale": "lt"}, requirements={"_locale" = "%app.locales%"})
  */
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="home")
+     * @Route("", name="home")
      */
     public function indexAction(Request $request)
     {
-        $locale = $request->getLocale();
         return $this->render('AppBundle:Home:index.html.twig', array(
             // ...
         ));
