@@ -16,6 +16,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class OrdersController
+ * @package AppBundle\Controller
+ * @Route("/{_locale}/orders", defaults={"_locale": "lt"}, requirements={"_locale" = "%app.locales%"})
+ */
 class OrdersController extends Controller
 {
     /**
@@ -65,6 +70,12 @@ class OrdersController extends Controller
      */
     public function newFormAction()
     {
-        return $this->render('AppBundle:OrderForm:form.html.twig');
+        $form = $this->createForm(OrdersType::class, null, [
+            'action' => $this->generateUrl('saveOrder')
+        ]);
+
+        return $this->render('AppBundle:OrderForm:form.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }

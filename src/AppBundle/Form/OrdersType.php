@@ -44,29 +44,32 @@ class OrdersType extends AbstractType
                 'label' => 'Aukštis (m)',
             ))
             ->add('fixation', ChoiceType::class, array(
-                'label' => 'Fixation',
+                'label' => 'form.label_fixation',
                 'choices' => array(
-                    'Strong wall' => 1,
-                    'Weak wall' => 2,
-                    'Free standing' => 3,
+                    'form.choice_strong' => 1,
+                    'form.choice_weak' => 2,
+                    'form.choice_free' => 3,
                 ),
+                'expanded' => true,
             ))
             ->add('location', ChoiceType::class, array(
-                'label' => 'Location',
+                'label' => 'form.label_location',
                 'choices' => array(
-                    'Indoor' => 1,
-                    'Shelter' => 2,
-                    'Outdoor' => 3,
+                    'form.choice_indoor' => 1,
+                    'form.choice_outdoor' => 2,
+                    'form.choice_shelter' => 3,
                 ),
+                'expanded' => true,
             ))
             ->add('purpose', ChoiceType::class, array(
-                'label' => 'Purpose',
+                'label' => 'form.label_purpose',
                 'choices' => array(
-                    'Profesional sport' => 1,
-                    'Amateur sport' => 2,
-                    'Recreational' => 3,
-                    'Playground' => 4,
+                    'form.choice_profesional' => 1,
+                    'form.choice_amateur' => 2,
+                    'form.choice_recreational' => 3,
+                    'form.choice_playground' => 4,
                 ),
+                'expanded' => true,
             ))
             ->add('Submit', SubmitType::class)
         ;
