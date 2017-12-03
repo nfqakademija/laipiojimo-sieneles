@@ -61,8 +61,8 @@
 </header>
 
 <div id="wrapper" class="">
-    <form accept-charset="UTF-8" action="/saveOrder" class="new_group_cart_item" id="new_group_cart_item" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VXKXpXsQElf0f1luT5qtZZjUXImzDJ4NVfEkSWzfudk=" /></div>
-        <input id="technology_id" name="technology_id" type="hidden" value="30686" />
+    {{ form_start(form) }}
+    <input id="technology_id" name="technology_id" type="hidden" value="30686" />
         <div class="divided-section fixed-header-bar">
             <div class="js-fixed-header-bar">
                 <div class="container absolute-container">
@@ -81,7 +81,7 @@
                                     <span class="call-to-action__cart-total">42 €</span>
                                 </div>
                             </div>
-                            <button class="btn btn-carvey btn-animate-arrow" type="submit" tabindex="3">{{ 'order.header_send'|trans }}</button>
+                            {{ form_widget(form.submit) }}
                         </div>
                     </div>
                     <div class="row">
@@ -117,6 +117,22 @@
             <div class="container">
                 <div class="row">
                     <div class="span7">
+                        <div class="panel panel-product js-addon-group">
+                            <div class="panel-header">
+                                <h4 class="light-header">{{ 'form.label_measurements'|trans }}</h4>
+                            </div>
+                            <div class="row">
+                                <div class="span5">
+                                    <div class="panel-inner">
+                                        {{ 'form.label_width'|trans }}
+                                        {{ form_widget(form.width) }}<br>
+                                        {{ 'form.label_height'|trans }}
+                                        {{ form_widget(form.height) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-arrow"></div>
+                        </div>
                         <div class="panel panel-product js-addon-group">
                             <div class="panel-header">
                                 <h4 class="light-header">{{ 'form.label_fixation'|trans }}</h4>
@@ -156,11 +172,45 @@
                             </div>
                             <div class="section-arrow"></div>
                         </div>
+                        <div class="panel panel-product js-addon-group">
+                            <div class="panel-header">
+                                <h4 class="light-header">{{ 'form.label_certificate'|trans }}</h4>
+                            </div>
+                            <div class="row">
+                                <div class="span5">
+                                    <div class="panel-inner">
+                                        {{ form_widget(form.certificate) }}
+                                        {{ 'form.label_certificate_description'|trans }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-arrow"></div>
+                        </div>
+                        <div class="panel panel-product js-addon-group">
+                            <div class="panel-header">
+                                <h4 class="light-header">{{ 'form.label_contacts'|trans }}</h4>
+                            </div>
+                            <div class="row">
+                                <div class="span5">
+                                    <div class="panel-inner">
+                                        {{ 'form.label_name'|trans }}
+                                        {{ form_widget(form.clientName) }}<br>
+                                        {{ 'form.label_email'|trans }}
+                                        {{ form_widget(form.clientEmail) }}<br>
+                                        {{ 'form.label_phone'|trans }}
+                                        {{ form_widget(form.clientPhone) }}<br>
+                                        {{ 'form.label_city'|trans }}
+                                        {{ form_widget(form.clientCity) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-arrow"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+    {{ form_end(form) }}
 
     <div id="push"><!--//--></div>
 </div>

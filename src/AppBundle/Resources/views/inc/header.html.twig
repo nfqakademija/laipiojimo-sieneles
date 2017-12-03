@@ -12,9 +12,7 @@
         <ul>
             <li><a href="#intro">{{ 'header.about'|trans }}</a></li>
             <li><a href="#work">{{ 'header.gallery'|trans }}</a></li>
-            <li><a href="{{ path('new-from') }}">{{ 'header.order'|trans }}</a></li>
-
-
+            <li><a href="{{ path('orderForm') }}">{{ 'header.order'|trans }}</a></li>
             <li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <a href="{{ path('facebook_logout') }}">

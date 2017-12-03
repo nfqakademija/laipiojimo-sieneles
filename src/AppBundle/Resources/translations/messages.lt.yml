@@ -11,6 +11,7 @@ home.header_logout: Atsijungti
 order.header_text: Jūsų sienelės parametrai
 order.header_paragraph: Užpildykite šią formą.
 order.header_send: Siųsti užklausą
+
 order.side_header: Jūsų sienelė
 order.side_included: Į kainą įskaičiuota
 order.side_excluded: Į kainą neįskaičiuota
@@ -24,6 +25,12 @@ form.label_phone: Telefono nr.
 form.label_city: Miestas
 form.label_width: Plotis
 form.label_height: Aukštis
+form.label_measurements: Matmenys
+form.label_submit: Siųsti užklausą
+form.label_contacts: Kontaktai
+form.label_certificate: Sertifikatas
+form.label_certificate_description: Sienelė turi būti sertifikuota
+
 
 form.choice_strong: Mūrinė siena
 form.choice_weak: Silpna siena

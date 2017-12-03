@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\Request;
 class OrdersController extends Controller
 {
     /**
-     * @Route("/saveOrder", name="saveOrder")
+     * @Route("/save", name="orderSave")
      * @Method("POST")
      */
     public function SaveAction(Request $request)
@@ -52,12 +52,12 @@ class OrdersController extends Controller
     }
 
     /**
-     * @Route("/newform", name="new-from")
+     * @Route("/form", name="orderForm")
      */
-    public function newFormAction()
+    public function formAction()
     {
         $form = $this->createForm(OrdersType::class, null, [
-            'action' => $this->generateUrl('saveOrder')
+            'action' => $this->generateUrl('orderSave')
         ]);
 
         return $this->render('AppBundle:OrderForm:form.html.twig', [

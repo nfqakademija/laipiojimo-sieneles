@@ -16,7 +16,11 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("", name="home")
+     * Class HomeController
+     *
+     * @package AppBundle\Controller
+     *
+     * @Route("/{_locale}", defaults={"_locale": "lt"}, requirements={"_locale" = "%app.locales%"})
      */
     public function indexAction(Request $request)
     {

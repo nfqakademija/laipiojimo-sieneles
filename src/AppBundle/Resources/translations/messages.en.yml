@@ -5,6 +5,7 @@ home.header_text_: design and building in Lithuania.
 order.header_text: Your parameters
 order.header_paragraph: Fill this form.
 order.header_send: send request
+
 order.side_header: Your wall
 order.side_included: Included
 order.side_excluded: Not included
@@ -24,6 +25,12 @@ form.label_phone: Phone
 form.label_city: City
 form.label_width: Width
 form.label_height: Height
+form.label_measurements: Measurements
+form.label_submit: Send request
+form.label_contacts: Contacts
+form.label_certificate: Certificate
+form.label_certificate_description: I need a Certificate
+
 
 form.choice_strong: Brick wall
 form.choice_weak: Weak wall
