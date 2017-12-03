@@ -1,0 +1,40 @@
+home.header: climbing walls!
+home.header_text_1: Company "Laipiojimo sienelės" Is one of the leading companies in climbing walls'
+home.header_text_: design and building in Lithuania.
+
+order.header_text: Your parameters
+order.header_paragraph: Fill this form.
+order.header_send: send request
+order.side_header: Your wall
+order.side_included: Included
+order.side_excluded: Not included
+
+header.about: About
+header.gallery: Gallery
+header.order: Order
+home.header_login: Login
+home.header_logout: Logout
+
+form.label_fixation: Fixation
+form.label_location: Location
+form.label_purpose: Purpose
+form.label_name: Name
+form.label_email: Email
+form.label_phone: Phone
+form.label_city: City
+form.label_width: Width
+form.label_height: Height
+
+form.choice_strong: Brick wall
+form.choice_weak: Weak wall
+form.choice_free: Free standing
+form.choice_indoor: Indoor
+form.choice_shelter: Shelter
+form.choice_outdoor: Outdoor
+form.choice_profesional: Professional sport
+form.choice_amateur: Amateur sport
+form.choice_recreational: Recreational
+form.choice_playground: Playground
+
+list.no: No
+list.area: Area

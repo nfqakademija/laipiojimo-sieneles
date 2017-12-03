@@ -1,0 +1,12 @@
+AppBundle\Entity\User:
+    admin_user:
+        name: 'Matas Dominas'
+        email: 'mdominas@gmail.com'
+        roles: '[ROLE_ADMIN]'
+        facebook_id: '10213038598231343'
+        facebook_picture: '10213038598231343.jpg'
+        facebook_token: 'EAATQKpES5tUBAHHxOQ0UE6vBv8yKpfmD5weXpbwQoPL4JkWcSuFcV4AUZAYkQIEo45ZCPGSHiFX44ukoQaJtTo6qnoYsTFBCOVZB8agoD9dPC3dfdX9u7pDLbtcbCWhvbXuhGFCZBZC2SHkE9rAAPAZBvDRmxVZCS2VZCA7cFjvz6gZDZD'
+    user{1..99}:
+        name: '<firstName()> <lastName()>'
+        email: '<safeEmail()>'
+        roles: '[ROLE_USER]'
