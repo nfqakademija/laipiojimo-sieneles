@@ -66,21 +66,21 @@ class Orders
     /**
      * @var string
      *
-     * @ORM\Column(name="fixation", type="string", length=255)
+     * @ORM\Column(name="fixation", type="integer")
      */
     private $fixation;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="location", type="string", length=255)
+     * @ORM\Column(name="location", type="integer")
      */
     private $location;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="purpose", type="string", length=255)
+     * @ORM\Column(name="purpose", type="integer")
      */
     private $purpose;
 
