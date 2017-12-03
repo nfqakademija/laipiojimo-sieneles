@@ -36,17 +36,6 @@
                     {{ include('AppBundle:Articles:gallery.html.twig') }}
 
                 </article>
-
-                {#<!-- About -->#}
-                {#<article id="about">#}
-                    {#{{ include('AppBundle:Articles:about.html.twig') }}#}
-                {#</article>#}
-
-                <!-- Contact -->
-                <article id="contact">
-                    {{ render(controller('AppBundle:Orders:Form')) }}
-                </article>
-
             </div>
             {% block footer %}
                 {% include "AppBundle:inc:footer.html.twig" %}

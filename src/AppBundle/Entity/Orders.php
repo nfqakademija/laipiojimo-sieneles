@@ -91,6 +91,12 @@ class Orders
      */
     private $seen;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="certificate", type="boolean")
+     */
+    private $certificate;
 
     /**
      * Get id
@@ -339,6 +345,22 @@ class Orders
     public function getSeen()
     {
         return $this->seen;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCertificate(): bool
+    {
+        return $this->certificate;
+    }
+
+    /**
+     * @param bool $certificate
+     */
+    public function setCertificate(bool $certificate)
+    {
+        $this->certificate = $certificate;
     }
 }
 

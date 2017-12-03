@@ -22,13 +22,13 @@
                 <span class="icon diamond"></span>
                 <ul class="header__nav header__nav--left">
                     <li class="header__navItem">
-                        <a href="#apie" class="header__link">Apie</a>
+                        <a href="#apie" class="header__link">{{ 'header.about'|trans }}</a>
                     </li>
                     <li class="header__navItem">
-                        <a href="#galerija" class="header__link">Galerija</a>
+                        <a href="#galerija" class="header__link">{{ 'header.gallery'|trans }}</a>
                     </li>
                     <li class="header__navItem">
-                        <a href="#uzsakyti" class="header__link">Užsakyti</a>
+                        <a href="#uzsakyti" class="header__link">{{ 'header.order'|trans }}</a>
                     </li>
                 </ul>
 
@@ -46,13 +46,13 @@
         <div id="js--mobileDropdown" class="mobileHeader__dropdown">
             <ul class="mobileHeader__links">
                 <li class="mobileHeader__navItem">
-                    <a href="#apie" class="header__link">Apie</a>
+                    <a href="#apie" class="header__link">{{ 'header.about'|trans }}</a>
                 </li>
                 <li class="mobileHeader__navItem">
-                    <a href="#galerija" class="header__link">Galerija</a>
+                    <a href="#galerija" class="header__link">{{ 'header.gallery'|trans }}</a>
                 </li>
                 <li class="mobileHeader__navItem">
-                    <a href="#uzsakyti" class="header__link">Užsakyti</a>
+                    <a href="#uzsakyti" class="header__link">{{ 'header.order'|trans }}</a>
                 </li>
             </ul>
         </div>
@@ -61,19 +61,18 @@
 </header>
 
 <div id="wrapper" class="">
-    <form accept-charset="UTF-8" action="/saveOrder" class="new_group_cart_item" id="new_group_cart_item" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VXKXpXsQElf0f1luT5qtZZjUXImzDJ4NVfEkSWzfudk=" /></div>
-        <input id="technology_id" name="technology_id" type="hidden" value="30686" />
+    {{ form_start(form) }}
+    <input id="technology_id" name="technology_id" type="hidden" value="30686" />
         <div class="divided-section fixed-header-bar">
             <div class="js-fixed-header-bar">
                 <div class="container absolute-container">
                     <div class="header-bar">
                         <div class="header-bar__text">
                             <h2 class="addon-page-header">
-                                Jūsų sienelės parametrai
+                                {{ 'order.header_text'|trans }}
                             </h2>
                             <p>
-
-                                Užpildykite šią formą.
+                                {{ 'order.header_paragraph'|trans }}
                             </p>
                         </div>
                         <div class="header-bar__subtotal call-to-action">
@@ -82,25 +81,25 @@
                                     <span class="call-to-action__cart-total">42 €</span>
                                 </div>
                             </div>
-                            <button class="btn btn-carvey btn-animate-arrow" type="submit" tabindex="3">Siųsti užklausą</button>
+                            {{ form_widget(form.submit) }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="span5 pull-right panel panel-review u-tablet-hide">
                             <div class="panel-header">
-                                <h4 class="light-header">Jūsų sienelė</h4>
+                                <h4 class="light-header">{{ 'order.side_header'|trans }}</h4>
                             </div>
                             <div class="panel-inner">
                                 <div class="thumbnail thumbnail-action">
                                     <img alt="" id="preview-image" src="{{ asset('images/pic02.jpg') }}" />
                                 </div>
                                 <div class="panel-inner clearfix">
-                                    <b>Į kainą įskaičiuota:</b>
+                                    <b>{{ 'order.side_included'|trans }}:</b>
                                     <ul class="nav" id="js-kit-contains">
                                     </ul>
                                 </div>
                                 <div class="panel-inner clearfix alert alert-danger">
-                                    <b>Į kainą neįskaičiuota:</b>
+                                    <b>{{ 'order.side_excluded'|trans }}:</b>
                                     <ul class="nav" id="js-kit-requires">
                                     </ul>
                                 </div>
@@ -118,339 +117,100 @@
             <div class="container">
                 <div class="row">
                     <div class="span7">
-                        <div class="panel panel-product divided-section">
+                        <div class="panel panel-product js-addon-group">
                             <div class="panel-header">
-                                <h4 class="light-header">Tvirtinimas</h4>
+                                <h4 class="light-header">{{ 'form.label_measurements'|trans }}</h4>
                             </div>
                             <div class="row">
                                 <div class="span5">
                                     <div class="panel-inner">
-                                        <p>Pasirinkite, prie ko galima tvirtinti laipiojimo sienelę.</p>
-                                        <div id="js-options" data-sample-properties="Description">
-                                            <input id="exclusive_options_technology_30686_position" name="exclusive_options[technology_30686][position]" type="hidden" value="{:value=&gt;-1}" />
-                                            <p class="sample-input" id="js-sample-option" data-group-renderable="true">
-                                                <label class="radio mobile-checkbox">
-                                                    <input type="radio"
-                                                           class="js-master-option"
-                                                           name="exclusive_options[technology_30686][sample_id]"
-                                                           value="39776"
-                                                           tabindex="2"
-                                                           data-sample-id='39776'
-                                                           data-sample-properties='[{"sample_spec":{"property":"Description","value":"X-Carve Core Components"}}]'
-                                                           data-render-sample-id='39776'
-                                                           data-price="19900.0"
-                                                           data-struck-price="19900.0"
-                                                           checked
-                                                    >
-                                                    <span class="helper-text js-sample-description">
-                                                        <strong>Mūrinė siena</strong>
-                                                    </span>
-                                                    <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                                </label>
-                                            </p>
-                                            <p class="sample-input" id="js-sample-option" data-group-renderable="true">
-                                                <label class="radio mobile-checkbox">
-                                                    <input type="radio"
-                                                           class="js-master-option"
-                                                           name="exclusive_options[technology_30686][sample_id]"
-                                                           value="39776"
-                                                           tabindex="2"
-                                                           data-sample-id='39776'
-                                                           data-sample-properties='[{"sample_spec":{"property":"Description","value":"X-Carve Core Components"}}]'
-                                                           data-render-sample-id='39776'
-                                                           data-price="19900.0"
-                                                           data-struck-price="19900.0"
-                                                           checked
-                                                    >
-                                                    <span class="helper-text js-sample-description">
-                                                        <strong>Kolonos</strong>
-                                                    </span>
-                                                    <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                                </label>
-                                            </p>
-                                            <p class="sample-input" id="js-sample-option" data-group-renderable="true">
-                                                <label class="radio mobile-checkbox">
-                                                    <input type="radio"
-                                                           class="js-master-option"
-                                                           name="exclusive_options[technology_30686][sample_id]"
-                                                           value="39776"
-                                                           tabindex="2"
-                                                           data-sample-id='39776'
-                                                           data-sample-properties='[{"sample_spec":{"property":"Description","value":"X-Carve Core Components"}}]'
-                                                           data-render-sample-id='39776'
-                                                           data-price="19900.0"
-                                                           data-struck-price="19900.0"
-                                                           checked
-                                                    >
-                                                    <span class="helper-text js-sample-description">
-                                                        <strong>Laisvai stovinti</strong>
-                                                    </span>
-                                                    <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                                </label>
-                                            </p>
-                                        </div>
+                                        {{ 'form.label_width'|trans }}
+                                        {{ form_widget(form.width) }}<br>
+                                        {{ 'form.label_height'|trans }}
+                                        {{ form_widget(form.height) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="section-arrow"></div>
                         </div>
-
-                        <div class="panel panel-product js-addon-group"
-                             data-group-name="Sienelės paskirtis"
-                             data-group-required="true"
-                             data-group-renderable="true"
-                             id="addon_group_17"
-                        >
+                        <div class="panel panel-product js-addon-group">
                             <div class="panel-header">
-                                <h4 class="light-header">Sienelės paskirtis</h4>
+                                <h4 class="light-header">{{ 'form.label_fixation'|trans }}</h4>
                             </div>
                             <div class="row">
-
                                 <div class="span5">
                                     <div class="panel-inner">
-                                        <p>
-                                            Kam bus naudojama ši laipiojimo sienelė?
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="radio mobile-checkbox">
-                                                <input type="radio"
-                                                       class="js-addon-option"
-                                                       name="exclusive_options[addon_group_17][sample_id]"
-                                                       value="39777"
-                                                       tabindex="2"
-                                                       data-sample-name='sport'
-                                                       data-price="4600.0"
-                                                       data-struck-price="4600.0"
-                                                       data-sample-id='39777'
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39777'
-                                                >
-                                                <strong>Sportas</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="radio mobile-checkbox">
-                                                <input type="radio"
-                                                       class="js-addon-option"
-                                                       name="exclusive_options[addon_group_17][sample_id]"
-                                                       value="39778"
-                                                       tabindex="2"
-                                                       data-sample-name='Pramoga'
-                                                       data-price="14900.0"
-                                                       data-struck-price="14900.0"
-                                                       data-sample-id='39778'
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39778'
-                                                >
-                                                <strong>Pramoga</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="radio mobile-checkbox">
-                                                <input type="radio"
-                                                       class="js-addon-option"
-                                                       name="exclusive_options[addon_group_17][sample_id]"
-                                                       value="39779"
-                                                       tabindex="2"
-                                                       data-sample-name='Žaidimų aikštelė'
-                                                       data-price="19900.0"
-                                                       data-struck-price="19900.0"
-                                                       data-sample-id='39779'
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39779'
-                                                >
-                                                <strong>Žaidimų aikštelė</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
+                                        {{ form_widget(form.fixation) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="section-arrow"></div>
                         </div>
-                        <div class="panel panel-product js-addon-group"
-                             data-group-name="Vieta"
-                             data-group-required="true"
-                             data-group-renderable="false"
-                             id="addon_group_20"
-                        >
+                        <div class="panel panel-product js-addon-group">
                             <div class="panel-header">
-                                <h4 class="light-header">Vieta</h4>
+                                <h4 class="light-header">{{ 'form.label_purpose'|trans }}</h4>
                             </div>
                             <div class="row">
                                 <div class="span5">
                                     <div class="panel-inner">
-                                        <p>
-                                            Kokioje vietoje stovės sienelė? Nuo aplinkos sąlygų priklauso naudojamos medžiagos.
-                                        </p>
-                                        <input id="exclusive_options_addon_group_20_position" name="exclusive_options[addon_group_20][position]" type="hidden" value="1" />
-                                        <p class="sample-input">
-                                            <label class="radio mobile-checkbox">
-                                                <input type="radio"
-                                                       class="js-addon-option"
-                                                       name="exclusive_options[addon_group_20][sample_id]"
-                                                       value="39642"
-                                                       tabindex="2"
-                                                       data-sample-name='Atvirame lauke'
-                                                       data-price="15900.0"
-                                                       data-struck-price="15900.0"
-                                                       data-sample-id='39642'
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39642'
-                                                >
-                                                <strong>Atvirame lauke</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="radio mobile-checkbox">
-                                                <input type="radio"
-                                                       class="js-addon-option"
-                                                       name="exclusive_options[addon_group_20][sample_id]"
-                                                       value="39393"
-                                                       tabindex="2"
-                                                       data-sample-name='Lauke, po stogu'
-                                                       data-price="25400.0"
-                                                       data-struck-price="25400.0"
-                                                       data-sample-id='39393'
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39393'
-                                                >
-                                                <strong>Lauke, po stogu</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="radio mobile-checkbox">
-                                                <input type="radio"
-                                                       class="js-addon-option"
-                                                       name="exclusive_options[addon_group_20][sample_id]"
-                                                       value="39305"
-                                                       tabindex="2"
-                                                       data-sample-name='Viduje'
-                                                       data-price="3500.0"
-                                                       data-struck-price="3500.0"
-                                                       data-sample-id='39305'
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39305'
-                                                >
-                                                <strong>Viduje</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
+                                        {{ form_widget(form.purpose) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="section-arrow"></div>
                         </div>
-                        <div class="panel panel-product js-addon-group"
-                             data-group-name="Sertifikatas"
-                             data-group-required="true"
-                             data-group-renderable="false"
-                             id="addon_group_21"
-                        >
+                        <div class="panel panel-product js-addon-group">
                             <div class="panel-header">
-                                <h4 class="light-header">Sertifikatas</h4>
+                                <h4 class="light-header">{{ 'form.label_location'|trans }}</h4>
                             </div>
                             <div class="row">
                                 <div class="span5">
                                     <div class="panel-inner">
-                                        <p>
-                                            Visos mūsų gaminamos laipiojimo sienelės atitinka LT EN 12572 "Dirbtinės laipiojimo struktūros" standartus, bet sertifikato išdavimas reikalauja daug papildomų dokumentų ruošimo, tad ši paslauga kainuoja papildomai. Privačiuose objektuose esančios sienelės neprivalo būti sertifikuotos.
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="checkbox mobile-checkbox">
-                                                <input id="samples_39576_position" name="samples[39576][position]" type="hidden" value="2" />
-                                                <input type="checkbox"
-                                                       class="js-addon-option"
-                                                       name="samples[39576][quantity]"
-                                                       value="1"
-                                                       tabindex="2"
-                                                       data-sample-name='Sertifikatas'
-                                                       data-sample-id='39576'
-                                                       data-price="30000.0"
-                                                       data-struck-price="30000.0"
-                                                       data-depends-on="[]"
-                                                       data-render-sample-id='39576'
-                                                >
-                                                <strong>Sertifikatas</strong>
-                                                -
-                                                [300.00 €]
-                                                <span class="small-description">
-                                                    Laipiojimo sienelės sertifikato išdavimas.
-                                                </span>
-                                            </label>
-                                        </p>
+                                        {{ form_widget(form.location) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="section-arrow"></div>
                         </div>
-                        <div class="panel panel-product js-addon-group"
-                             data-group-name="Kybiai"
-                             data-group-required="true"
-                             data-group-renderable="false"
-                             id="addon_group_19"
-                        >
+                        <div class="panel panel-product js-addon-group">
                             <div class="panel-header">
-                                <h4 class="light-header">Kybiai</h4>
+                                <h4 class="light-header">{{ 'form.label_certificate'|trans }}</h4>
                             </div>
                             <div class="row">
                                 <div class="span5">
                                     <div class="panel-inner">
-                                        <p>
-                                            Jūsų pageidavimu galime sukurti laipiojimo trasas.
-                                        </p>
-                                        <p class="sample-input">
-                                            <label class="checkbox mobile-checkbox">
-                                                <input id="samples_39545_position" name="samples[39545][position]" type="hidden" value="3" />
-                                                <input type="checkbox"
-                                                       class="js-addon-option"
-                                                       name="samples[39545][quantity]"
-                                                       value="1"
-                                                       tabindex="2"
-                                                       data-sample-name='Trasų kūrimas'
-                                                       data-sample-id='39545'
-                                                       data-price="8000.0"
-                                                       data-struck-price="8000.0"
-                                                       data-depends-on="[39777]"
-                                                       data-render-sample-id='39545'
-                                                >
-                                                <strong>Trasų kūrimas</strong>
-                                                <span class="small-description">
-                                                    Aprašymas
-                                                </span>
-                                            </label>
-                                        </p>
+                                        {{ form_widget(form.certificate) }}
+                                        {{ 'form.label_certificate_description'|trans }}
                                     </div>
                                 </div>
                             </div>
+                            <div class="section-arrow"></div>
+                        </div>
+                        <div class="panel panel-product js-addon-group">
+                            <div class="panel-header">
+                                <h4 class="light-header">{{ 'form.label_contacts'|trans }}</h4>
+                            </div>
+                            <div class="row">
+                                <div class="span5">
+                                    <div class="panel-inner">
+                                        {{ 'form.label_name'|trans }}
+                                        {{ form_widget(form.clientName) }}<br>
+                                        {{ 'form.label_email'|trans }}
+                                        {{ form_widget(form.clientEmail) }}<br>
+                                        {{ 'form.label_phone'|trans }}
+                                        {{ form_widget(form.clientPhone) }}<br>
+                                        {{ 'form.label_city'|trans }}
+                                        {{ form_widget(form.clientCity) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-arrow"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+    {{ form_end(form) }}
 
     <div id="push"><!--//--></div>
 </div>
@@ -474,19 +234,19 @@
         <div class="footer__navigation">
             <ul class="footer__list">
                 <li class="footer__listItem">
-                    <a href="#apie" class="footer__link">Apie</a>
+                    <a href="#apie" class="footer__link">{{ 'header.about'|trans }}</a>
                 </li>
             </ul>
 
             <ul class="footer__list">
                 <li class="footer__listItem">
-                    <a href="#galerija" class="footer__link">Galerija</a>
+                    <a href="#galerija" class="footer__link">{{ 'header.gallery'|trans }}</a>
                 </li>
             </ul>
 
             <ul class="footer__list">
                 <li class="footer__listItem">
-                    <a href="#uzsakyti" class="footer__link">Užsakyti</a>
+                    <a href="#uzsakyti" class="footer__link">{{ 'header.order'|trans }}</a>
                 </li>
             </ul>
 

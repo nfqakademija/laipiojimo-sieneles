@@ -4,17 +4,15 @@
     </div>
     <div class="content">
         <div class="inner">
-            <h1>Laipiojimo sienelės</h1>
-            <p>Įmonė "Laipiojimo sienelės" yra viena lyderiaujančių Laipiojimo sienelių<br>
-                projektavimo ir įrengimo įmonių Lietuvoje.</p>
+            <h1>{{ 'home.header'|trans }}</h1>
+            <p>{{ 'home.header_text_1'|trans }}<br>{{ 'home.header_text_2'|trans }}</p>
         </div>
     </div>
     <nav>
         <ul>
-            <li><a href="#intro">Apie</a></li>
-            <li><a href="#work">Galerija</a></li>
-            {#<li><a href="#about">About</a></li>#}
-            <li><a href="{{ path('new-from') }}">Užsakyti</a></li>
+            <li><a href="#intro">{{ 'header.about'|trans }}</a></li>
+            <li><a href="#work">{{ 'header.gallery'|trans }}</a></li>
+            <li><a href="{{ path('orderForm') }}">{{ 'header.order'|trans }}</a></li>
 
 
             <li>
@@ -23,18 +21,17 @@
                         <span class="icon">
                             <i class="fa fa-facebook-official", style="color: #3b5998"></i>
                         </span>
-                        <span>Logout</span>
+                        <span>{{ 'home.header_logout'|trans }}</span>
                     </a>
                 {% else %}
                     <a href="{{ path('app_facebook_connect') }}" >
                         <span class="icon">
                             <i class="fa fa-facebook-official", style="color: #3b5998"></i>
                         </span>
-                        <span>Login</span>
+                        <span>{{ 'home.header_login'|trans }}</span>
                     </a>
                 {% endif %}
             </li>
-            <!--<li><a href="#elements">Elements</a></li>-->
         </ul>
     </nav>
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
