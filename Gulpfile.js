@@ -46,4 +46,8 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest(dir.dist + 'fonts'));
 });
 
+gulp.task('sass:watch', function () {
+    gulp.watch(dir.assets + 'style/**', ['sass']);
+});
+
 gulp.task('default', ['sass', 'scripts', 'fonts', 'images']);
