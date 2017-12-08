@@ -32,8 +32,7 @@
 			'color #{_duration(transition)} ease-in-out',
 			'border-bottom-color #{_duration(transition)} ease-in-out'
 		));
-		border-bottom: dotted 1px;
-		color: inherit;
+		color: _palette(fg);
 		text-decoration: none;
 
 		&:hover {
@@ -73,9 +72,11 @@
 
 	h1 {
 		font-size: 2.5em;
+		color: _palette(bg);
 	}
 
 	h2 {
+		color: _palette(bg);
 		font-size: 1.75em;
 	}
 

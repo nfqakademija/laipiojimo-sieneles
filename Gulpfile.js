@@ -25,7 +25,12 @@ gulp.task('scripts', function() {
             dir.npm + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
 
             // Main JS file
-            dir.assets + 'scripts/main.js'
+        dir.assets + 'scripts/jquery.scrollex.min.js',
+        dir.assets + 'scripts/jquery.scrolly.min.js',
+        dir.assets + 'scripts/skel.min.js',
+        dir.assets + 'scripts/util.js',
+        dir.assets + 'scripts/ie/respond.min.js',
+        dir.assets + 'scripts/main.js'
         ])
         .pipe(concat('script.js'))
         .pipe(uglify())
