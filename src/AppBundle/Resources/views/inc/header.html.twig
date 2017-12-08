@@ -1,44 +1,6 @@
-<header id="header">
-    <div class="logo">
-        <span class="icon fa-diamond"></span>
-    </div>
-    <div class="content">
-        <div class="inner">
-            <h1>{{ 'home.header'|trans }}</h1>
-            <p>{{ 'home.header_text_1'|trans }}<br>{{ 'home.header_text_2'|trans }}</p>
-        </div>
-    </div>
+<header id="header" class="alt">
+    <a href="#" class="logo"><strong>Laipiojimo sienelės</strong> <span></span></a>
     <nav>
-        <ul>
-            <li><a href="#intro">{{ 'header.about'|trans }}</a></li>
-            <li><a href="#work">{{ 'header.gallery'|trans }}</a></li>
-            <li><a href="{{ path('orderForm') }}">{{ 'header.order'|trans }}</a></li>
-            <li>
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <a href="{{ path('facebook_logout') }}">
-                        <span class="icon">
-                            <i class="fa fa-facebook-official", style="color: #3b5998"></i>
-                        </span>
-                        <span>{{ 'home.header_logout'|trans }}</span>
-                    </a>
-                {% else %}
-                    <a href="{{ path('app_facebook_connect') }}" >
-                        <span class="icon">
-                            <i class="fa fa-facebook-official", style="color: #3b5998"></i>
-                        </span>
-                        <span>{{ 'home.header_login'|trans }}</span>
-                    </a>
-                {% endif %}
-            </li>
-        </ul>
+        <a href="#menu">Menu</a>
     </nav>
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <div>
-            <h1>Hello, {{ app.user.name }}</h1>
-            <img src="{{ asset('uploads/fb/' ~ app.user.facebookPicture) }}">
-        </div>
-    {% endif %}
-    <span class="image main"><img src="{{ asset('images/pic02.jpg') }}" alt="" /></span>
-
 </header>
-
