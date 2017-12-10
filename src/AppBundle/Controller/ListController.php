@@ -6,7 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * @Route("/{_locale}/orders", defaults={"_locale": "lt"}, requirements={"_locale" = "%app.locales%"}), name="ordersIndex")
+ * @Route("/{_locale}/orders", defaults={"_locale":"lt"}, requirements={"_locale"="%app.locales%"}))
  */
 class ListController extends Controller
 {
