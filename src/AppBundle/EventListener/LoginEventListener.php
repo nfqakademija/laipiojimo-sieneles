@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: matas
- * Date: 11/7/17
- * Time: 2:33 PM
- */
 
 namespace AppBundle\EventListener;
 
@@ -13,7 +7,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
-
 
 class LoginEventListener
 {
@@ -43,7 +36,7 @@ class LoginEventListener
         if (null == $user->getFacebookPicture()) {
             $saveto = __DIR__.'/../../../web/uploads/fb';
             $ch = curl_init($facebookUser->getPictureUrl());
-            $fp = fopen(sprintf('%s/%s.%s', $saveto, $facebookUser->getId(), 'jpg'),'wb');
+            $fp = fopen(sprintf('%s/%s.%s', $saveto, $facebookUser->getId(), 'jpg'), 'wb');
             curl_setopt($ch, CURLOPT_FILE, $fp);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_exec($ch);

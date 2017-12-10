@@ -363,4 +363,3 @@ class Orders
         $this->certificate = $certificate;
     }
 }
-

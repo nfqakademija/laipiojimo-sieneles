@@ -66,7 +66,7 @@ class FacebookAuthenticator extends SocialAuthenticator
     {
         $existingUser = $this->em->getRepository('AppBundle:User')
             ->findOneBy(['facebookId' => $userArray['id']]);
-        if($existingUser){
+        if ($existingUser) {
             $existingUser->setLastLoginTime(new \DateTime("now", new \DateTimeZone('Europe/Vilnius')));
             $this->em->persist($existingUser);
             $this->em->flush();

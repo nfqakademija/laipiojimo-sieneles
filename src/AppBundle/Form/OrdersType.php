@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Matas
- * Date: 2017-09-13
- * Time: 10:27
- */
 
 namespace AppBundle\Form;
-
 
 use AppBundle\Entity\Orders;
 use Symfony\Component\Form\AbstractType;

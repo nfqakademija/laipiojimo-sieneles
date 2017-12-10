@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Matas
- * Date: 2017-09-13
- * Time: 10:30
- */
 
 namespace AppBundle\Controller;
-
 
 use AppBundle\Entity\Orders;
 use AppBundle\Form\OrdersType;
@@ -27,7 +20,7 @@ class OrdersController extends Controller
      * @Route("/save", name="orderSave")
      * @Method("POST")
      */
-    public function SaveAction(Request $request)
+    public function saveAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 

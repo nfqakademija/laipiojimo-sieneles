@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Matas
- * Date: 2017-09-13
- * Time: 13:28
- */
 
 namespace AppBundle\Controller;
-
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,7 +13,7 @@ class ListController extends Controller
     /**
      * @Route("/list", name="orders_list")
      */
-    public function FormAction()
+    public function formAction()
     {
         $em = $this->getDoctrine()->getManager();
 
