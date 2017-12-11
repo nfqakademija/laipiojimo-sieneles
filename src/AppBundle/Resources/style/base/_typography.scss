@@ -174,7 +174,16 @@
 	}
 
 	#one {
-		p {
-			color: _palette(fg);
+		.major{
+			p {
+				color: _palette(fg);
+			}
 		}
+	}
+
+	#contact {
+		label, h3, a {
+			color: _palette(bg);
+		}
+
 	}

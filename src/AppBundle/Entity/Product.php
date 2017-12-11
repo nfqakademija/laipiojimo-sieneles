@@ -143,7 +143,7 @@ class Product
      *
      * @return string
      */
-    public function getShortDescription(): string
+    public function getShortDescription()
     {
         return $this->shortDescription;
     }
@@ -165,7 +165,7 @@ class Product
      *
      * @return string
      */
-    public function getLongDescription(): string
+    public function getLongDescription()
     {
         return $this->longDescription;
     }
