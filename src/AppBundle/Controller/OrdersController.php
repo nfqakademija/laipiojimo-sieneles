@@ -34,14 +34,14 @@ class OrdersController extends Controller
             $em->persist($newOrder);
             $em->flush();
 
-            return $this->render('AppBundle:contents:output.html.twig', [
-                'output' => 'Your order has been sent!',
-            ]);
+            $output = 'Your order has been sent!';
         } else {
-            return $this->render('AppBundle:contents:output.html.twig', [
-                'output' => 'Something went wrong. Go back and try again',
-            ]);
+            $output = 'Something went wrong. Go back and try again';
         }
+
+        return $this->render('AppBundle:contents:output.html.twig', [
+            'output' => $output,
+        ]);
     }
 
     /**

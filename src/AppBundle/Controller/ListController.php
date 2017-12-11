@@ -25,7 +25,7 @@ class ListController extends Controller
     }
 
     /**
-     * @Route("/details/{id}", name="details")
+     * @Route("/details/{id}", name="admin.details")
      */
     public function categoryAction($id)
     {

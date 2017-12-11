@@ -19,8 +19,7 @@
 </head>
 <body>
     <div id="wrapper">
-        {#{% block wrapper %}#}
-
+        {% block wrapper %}
             <!-- Header -->
             {% block header %}
                 {% include "AppBundle:inc:header.html.twig" %}
@@ -38,7 +37,6 @@
 
             <!-- Main -->
             {% block main %}
-                {% include "AppBundle:inc:main.html.twig" %}
             {% endblock %}
 
             <!-- Contact -->
@@ -46,13 +44,11 @@
                 {% include "AppBundle:inc:contact.html.twig" %}
             {% endblock %}
 
-
             <!-- Footer -->
             {% block footer %}
                 {% include "AppBundle:inc:footer.html.twig" %}
             {% endblock %}
-
-        {#{% endblock %}#}
+        {% endblock %}
     </div>
 
 
