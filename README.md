@@ -60,3 +60,9 @@ docker-compose kill <container name>
 ### Kaip pamatyti kas atsitiko?
 
 Atsidarote naršyklę ir einate į `http://127.0.0.1:8000`
+
+
+Admin login:
+/admin/list
+user: administratorius
+pass: labaislaptas

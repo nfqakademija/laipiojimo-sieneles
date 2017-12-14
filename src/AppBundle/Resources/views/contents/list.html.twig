@@ -21,7 +21,7 @@
                         {% endif %}
                     >
                         <td>{{ order.id }}</td>
-                        <td> <a href="{{ path('details', {'id': order.id}) }}">{{ order.clientName }}</a></td>
+                        <td> <a class="black" href="{{ path('admin.details', {'id': order.id}) }}">{{ order.clientName }}</a></td>
                         <td>{{ order.clientCity }}</td>
                         <td>{{ (order.width * order.height)|round(1, 'common') }}</td>
                     </tr>

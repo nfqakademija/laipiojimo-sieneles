@@ -3,9 +3,10 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Orders;
+use AppBundle\Entity\Product;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +20,7 @@ class OrdersType extends AbstractType
     {
         $builder
             ->setMethod('POST')
-            ->setAttribute('class', 'test')
+//            ->setAttribute('class', 'test')
             ->add('clientName', TextType::class, [
                 'label' => 'form.label_name',
             ])
@@ -33,49 +34,24 @@ class OrdersType extends AbstractType
                 'label' => 'form.label_city',
             ])
             ->add('width', NumberType::class, [
-                'label' => 'form.label_width (m)',
+                'label' => 'form.label_width',
             ])
             ->add('height', NumberType::class, [
-                'label' => 'form.label_height (m)',
+                'label' => 'form.label_height',
             ])
-            ->add('fixation', ChoiceType::class, [
-                'label' => 'form.label_fixation',
-                'choices' => [
-                    'form.choice_strong' => 1,
-                    'form.choice_weak' => 2,
-                    'form.choice_free' => 3,
-                ],
+            ->add('productId', EntityType::class, [
+                'class' => Product::class,
+                'label' => 'form.label_product',
+                'choice_label' => 'name',
                 'expanded' => true,
-            ])
-            ->add('location', ChoiceType::class, [
-                'label' => 'form.label_location',
-                'choices' => [
-                    'form.choice_indoor' => 1,
-                    'form.choice_shelter' => 2,
-                    'form.choice_outdoor' => 3,
+                'attr' =>
+                [
+                    'class' => '7u 12u$(small)',
                 ],
-                'expanded' => true,
-            ])
-            ->add('purpose', ChoiceType::class, [
-                'label' => 'form.label_purpose',
-                'choices' => [
-                    'form.choice_profesional' => 1,
-                    'form.choice_amateur' => 2,
-                    'form.choice_recreational' => 3,
-                    'form.choice_playground' => 4,
-                ],
-                'expanded' => true,
-            ])
-            ->add('certificate', CheckboxType::class, [
-                'label' => 'form.label_certificate',
-                'required' => false,
+
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'form.label_submit',
-                'attr' => [
-                    'class' => "btn btn-carvey btn-animate-arrow",
-                    'tabindex' => "3",
-                ],
             ])
         ;
     }

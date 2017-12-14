@@ -182,8 +182,24 @@
 	}
 
 	#contact {
-		label, h3, a {
-			color: _palette(bg);
+		h3, a {
+			color: _palette(bg) !important;
 		}
 
+	}
+
+	label {
+		color: _palette(bg) !important;
+	}
+
+	footer {
+		.icons, .copyright {
+            li, a {
+                color: _palette(bg) !important;
+            }
+		}
+	}
+
+	.black {
+		color: _palette(bg) !important;
 	}
