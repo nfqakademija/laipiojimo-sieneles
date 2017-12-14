@@ -75,9 +75,9 @@ class HomeController extends Controller
             $em->persist($newOrder);
             $em->flush();
 
-            $output = 'Your order has been sent!';
+            $output = 'Jūsų užklausa išsiųsta. Susisieksime su Jumis per 2 darbo dienas.';
         } else {
-            $output = 'Something went wrong. Go back and try again';
+            $output = 'Įvyko klaida, prašome bandyti dar kartą.';
         }
 
         return $this->render('AppBundle:contents:output.html.twig', [
