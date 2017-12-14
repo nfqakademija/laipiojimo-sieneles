@@ -21,7 +21,7 @@
 		border: 0;
 		border-radius: 0;
 		box-shadow: inset 0 0 0 2px _palette(fg-bold);
-		color: _palette(fg-bold);
+		color: _palette(bg);
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8em;
@@ -109,7 +109,7 @@
 		}
 
 		&.special {
-			background-color: _palette(fg-bold);
+			background-color: _palette(input-field);
 			box-shadow: none;
 			color: _palette(bg);
 

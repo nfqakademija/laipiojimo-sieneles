@@ -64,25 +64,10 @@ class Orders
     private $height;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="fixation", type="integer")
+     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
-    private $fixation;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="location", type="integer")
-     */
-    private $location;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="purpose", type="integer")
-     */
-    private $purpose;
+    private $productId;
 
     /**
      * @var bool
@@ -90,13 +75,6 @@ class Orders
      * @ORM\Column(name="seen", type="boolean")
      */
     private $seen;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="certificate", type="boolean")
-     */
-    private $certificate;
 
     /**
      * Get id
@@ -253,75 +231,19 @@ class Orders
     }
 
     /**
-     * Set fixation
-     *
-     * @param string $fixation
-     *
-     * @return Orders
+     * @return mixed
      */
-    public function setFixation($fixation)
+    public function getProductId()
     {
-        $this->fixation = $fixation;
-
-        return $this;
+        return $this->productId;
     }
 
     /**
-     * Get fixation
-     *
-     * @return string
+     * @param mixed $productId
      */
-    public function getFixation()
+    public function setProductId($productId)
     {
-        return $this->fixation;
-    }
-
-    /**
-     * Set location
-     *
-     * @param string $location
-     *
-     * @return Orders
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-
-        return $this;
-    }
-
-    /**
-     * Get location
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-    /**
-     * Set purpose
-     *
-     * @param string $purpose
-     *
-     * @return Orders
-     */
-    public function setPurpose($purpose)
-    {
-        $this->purpose = $purpose;
-
-        return $this;
-    }
-
-    /**
-     * Get purpose
-     *
-     * @return string
-     */
-    public function getPurpose()
-    {
-        return $this->purpose;
+        $this->productId = $productId;
     }
 
     /**
@@ -346,21 +268,4 @@ class Orders
     {
         return $this->seen;
     }
-
-    /**
-     * @return bool
-     */
-    public function isCertificate(): bool
-    {
-        return $this->certificate;
-    }
-
-    /**
-     * @param bool $certificate
-     */
-    public function setCertificate(bool $certificate)
-    {
-        $this->certificate = $certificate;
-    }
 }
-

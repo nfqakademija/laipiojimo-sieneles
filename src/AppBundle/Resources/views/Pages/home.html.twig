@@ -1,0 +1,22 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block main %}
+    <div id="main">
+
+        <!-- One -->
+        <section id="one" class="tiles">
+            {% for product in  products %}
+                <article>
+                <span class="image">
+                    <img src="{{ asset('images/' ~ product.mainPicture) }}" alt="" />
+                </span>
+                    <header class="major">
+                        <h3><a href="{{ path('details', {'id': product.id}) }}" class="link">{{ product.name }}</a></h3>
+                        <p>{{ product.shortDescription }}</p>
+                    </header>
+                </article>
+            {% endfor %}
+        </section>
+
+    </div>
+{% endblock %}

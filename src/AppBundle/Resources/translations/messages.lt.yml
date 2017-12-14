@@ -36,13 +36,18 @@ form.label_name: Vardas
 form.label_email: El. paštas
 form.label_phone: Telefono nr.
 form.label_city: Miestas
-form.label_width: Plotis
-form.label_height: Aukštis
+form.label_width: Plotis (m)
+form.label_height: Aukštis (m)
 form.label_measurements: Matmenys
 form.label_submit: Siųsti užklausą
 form.label_contacts: Kontaktai
 form.label_certificate: Sertifikatas
 form.label_certificate_description: Sienelė turi būti sertifikuota
+form.label_product: Produktas
+form.label_message: Žinutė
+form.label_adress: Adresas
+form.label_send: Siųsti
+form.label_clear: Valyti
 
 
 form.choice_strong: Mūrinė siena
@@ -58,3 +63,5 @@ form.choice_playground: Žaidimų aikštelė
 
 list.no: Nr
 list.area: Plotas
+
+school: mokykla

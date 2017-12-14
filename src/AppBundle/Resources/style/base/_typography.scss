@@ -172,3 +172,34 @@
 	.align-right {
 		text-align: right;
 	}
+
+	#one {
+		.major{
+			p {
+				color: _palette(fg);
+			}
+		}
+	}
+
+	#contact {
+		h3, a {
+			color: _palette(bg) !important;
+		}
+
+	}
+
+	label {
+		color: _palette(bg) !important;
+	}
+
+	footer {
+		.icons, .copyright {
+            li, a {
+                color: _palette(bg) !important;
+            }
+		}
+	}
+
+	.black {
+		color: _palette(bg) !important;
+	}
