@@ -23,39 +23,7 @@
         <li>
             {{ 'list.area'|trans }}: {{ (order.width * order.height)|round(1, 'common') }}
         </li>
-        <li>
-            {{ 'form.label_fixation'|trans }}:
-            {% if order.fixation == 1 %}
-                {{ 'form.choice_strong'|trans }}
-            {% elseif order.fixation == 2 %}
-                {{ 'form.choice_weak'|trans }}
-            {% elseif order.fixation == 3 %}
-                {{ 'form.choice_free'|trans }}
-            {% endif %}
-        </li>
-        <li>
-            {{ 'form.label_location'|trans }}:
-            {% if order.location == 1 %}
-                {{ 'form.choice_indoor'|trans }}
-            {% elseif order.location == 2 %}
-                {{ 'form.choice_shelter'|trans }}
-            {% elseif order.location == 3 %}
-                {{ 'form.choice_outdoor'|trans }}
-            {% endif %}
-        </li>
-        <li>
-            {{ 'form.label_purpose'|trans }}:
-            {% if order.purpose == 1 %}
-                {{ 'form.choice_profesional'|trans }}
-            {% elseif order.purpose == 2 %}
-                {{ 'form.choice_amateur'|trans }}
-            {% elseif order.purpose == 3 %}
-                {{ 'form.choice_recreational'|trans }}
-            {% elseif order.purpose == 4 %}
-                {{ 'form.choice_playground'|trans }}
-            {% endif %}
-        </li>
     </ul>
 
-    <a href="{{ path('orders_list') }}">{{ 'form.label_name'|trans }}</a>
+    <a class="black" href="{{ path('orders_list') }}">Atgal</a>
 {% endblock %}

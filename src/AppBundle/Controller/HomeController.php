@@ -2,6 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Orders;
+use AppBundle\Entity\Product;
+use AppBundle\Form\OrdersType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,9 +24,74 @@ class HomeController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('AppBundle:Home:index.html.twig', array(
-            // ...
-        ));
+        $em = $this->getDoctrine()->getManager();
+        $products = $em->getRepository('AppBundle:Product')->findAll();
+
+//        $product = new Product();
+//        $product->setName('top_rope');
+//        $product->setBasePrice('220');
+//        $product->setMainPicture('pic07.jpg');
+//        $product->setShortDescription('');
+//        $product->setLongDescription('');
+
+//        $em->persist($product);
+//        $em->flush();
+
+        return $this->render(
+            'AppBundle:Pages:home.html.twig',
+            [
+                'products' => $products,
+            ]
+        );
     }
 
+    /**
+     * @Route("/details/{id}", name="details")
+     */
+    public function detailsAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AppBundle:Product')->find($id);
+
+        $form = $this->createForm(OrdersType::class, null, [
+            'action' => $this->generateUrl('orderSave')
+        ]);
+
+        return $this->render(
+            'AppBundle:Pages:generic.html.twig',
+            [
+                'product' => $product,
+                'form' => $form->createView(),
+            ]
+        );
+    }
+
+    /**
+     * @Route("/save", name="orderSave")
+     * @Method("POST")
+     */
+    public function saveAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $newOrder = new Orders();
+        $newOrder->setSeen(false);
+
+        $form = $this->createForm(OrdersType::class, $newOrder);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em->persist($newOrder);
+            $em->flush();
+
+            $output = 'Your order has been sent!';
+        } else {
+            $output = 'Something went wrong. Go back and try again';
+        }
+
+        return $this->render('AppBundle:contents:output.html.twig', [
+            'output' => $output,
+        ]);
+    }
 }
